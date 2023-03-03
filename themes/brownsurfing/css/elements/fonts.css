@@ -6,18 +6,24 @@
     font-weight: 300;
     line-height:1.8;
 } */
-a{
-    color:#6381e5;
+a {
+    color: #6381e5;
 }
-a:hover{
-    color:#4b6cd8;
+
+a:hover {
+    color: #4b6cd8;
 }
-.text-white *{
-    color:white;
+
+.text-white * {
+    color: white;
 }
-b, strong {
+
+b,
+strong,
+.bold {
     font-weight: 800;
 }
+
 /* .h2,.h3,.h4,.h5,.h6,h2,h3,h4,h5,h6{
     color:#272727;
 } */
@@ -27,28 +33,34 @@ b, strong {
 .bold{
     font-family: 'proxima_novabold';
 } */
-.text-accent{
-    color:#6381e5;
+.text-accent {
+    color: #6381e5;
 }
-.text-gray{
-    color:#585556;
+
+.text-gray {
+    color: #585556;
 }
+
 .text-shadow {
     text-shadow: 1px 1px 3px black;
 }
-.text-black{
-    color:black;
+
+.text-black {
+    color: black;
 }
-.lh-1{
-    line-height:1;
+
+.lh-1 {
+    line-height: 1;
 }
+
 .nowrap {
     white-space: nowrap;
 }
+
 .text-gradient {
     font-weight: 700;
-    -webkit-text-fill-color: transparent!important;
-    -webkit-background-clip: text!important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-background-clip: text !important;
     color: #6381e5 !important;
     background-image: -o-linear-gradient(45deg, #60bdfc 0%, #6381e5 100%) !important;
     background-image: -ms--linear-gradient(45deg, #60bdfc 0%, #6381e5 100%) !important;

@@ -97,8 +97,10 @@ function brown_surfing_stylesheets_footer() {
 
 	// owl carousel
 	wp_enqueue_script('jquery-min', get_theme_file_uri('/owl-carousel/jquery.min.js'));
-	wp_enqueue_script('anime-js', '//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js');
-	wp_enqueue_script('anime-custom-js', get_theme_file_uri('/js/anime.js'));
+	if(!is_front_page()){
+		wp_enqueue_script('anime-js', '//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js');
+		wp_enqueue_script('anime-custom-js', get_theme_file_uri('/js/anime.js'));
+	}
 	wp_enqueue_script('owl-carousel', get_theme_file_uri('/owl-carousel/owl.carousel.min.js'));
 	wp_enqueue_script('owl-carousel-custom', get_theme_file_uri('/owl-carousel/owl-carousels.js'));
 	wp_enqueue_script('lightbox-min-js', get_theme_file_uri('/lightbox/lightbox.min.js'));
@@ -113,6 +115,11 @@ function brown_surfing_stylesheets_footer() {
     // general
 	wp_enqueue_script('nav-js', get_theme_file_uri('/js/nav.js'));
     wp_enqueue_script('popup-js', get_theme_file_uri('/js/popup.js'));
+
+	if(is_front_page()){
+		wp_enqueue_script('home-jquery-js', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js');
+		wp_enqueue_script('home-js', get_theme_file_uri('/js/home.js'));
+	}
 
 	if(is_single() || is_page(16)){
 		wp_enqueue_script('blog-js', get_theme_file_uri('/js/blog.js'));
@@ -229,3 +236,5 @@ function remove_website_field_from_comment_form($fields)
     }
     return $fields;
 }
+
+?>
