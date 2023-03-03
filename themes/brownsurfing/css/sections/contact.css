@@ -1,0 +1,43 @@
+input.wpcf7-form-control.wpcf7-submit {
+    background:#6381e5;
+    color: white;
+    border: none;
+    padding: 10px;
+    max-width: 200px;
+    border-radius: 25px;
+    cursor:pointer;
+    transition:all .25s ease-in-out;
+    box-shadow:none;
+}
+input.wpcf7-form-control.wpcf7-submit:hover {
+    background:#5374e0;
+}
+.wpcf7 input, .wpcf7 textarea, .wpcf7 label,.wpcf7 select {
+    width: 100%;
+    margin: 10px 0;
+}
+.wpcf7 input, .wpcf7 textarea,.wpcf7 select {
+    background: #dde4e9;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+#skillsDropdown{
+    transition:all 1s ease-in-out;
+    /* height:0px; */
+}
+span.ajax-loader {
+    display: none !important;
+}
+
+input,select,textarea {
+    padding: 5px;
+    box-shadow: 1px 1px 3px inset rgba(0,0,0,.5);
+    width:100%;
+        outline-color: var(--accent-primary);
+}
+
+input[type=checkbox], input[type=radio] {
+    box-shadow: none;
+    width: auto;
+}

@@ -1,0 +1,11 @@
+.container-cta:nth-child(odd) .row-cta {
+    flex-direction: row-reverse;
+}
+@media screen and (max-width:767px){
+    .sets-us-apart img{
+        position:relative!important;
+    }
+    .col-video iframe {
+        height: 225px;
+    }
+}

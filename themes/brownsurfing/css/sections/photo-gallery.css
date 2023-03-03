@@ -1,0 +1,30 @@
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background:transparent!important;
+}
+button.owl-next,button.owl-prev {
+    outline:none!important;
+}
+@media screen and (min-width:768px) {
+
+    button.owl-next,button.owl-prev {
+        position: absolute;
+        top: 50%;
+    }
+    button.owl-prev {
+        left:-10%;
+        transform:translate(0,-50%);
+    }
+    button.owl-next {
+        right:-10%;
+        transform:translate(0,-50%);
+    }
+}
+
+.owl-prev span, .owl-next span {
+    font-size: 4rem;
+    color:#6381e5;
+}
+.header-gallery .owl-prev span, .header-gallery .owl-next span {
+    font-size: 4rem;
+    color:white;
+}

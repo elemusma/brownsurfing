@@ -1,0 +1,24 @@
+.col-intro{
+    transition:all .25s ease-in-out;
+}
+.col-intro p{
+    transition:all .15s ease-in-out;
+}
+.col-intro:hover{
+    background:linear-gradient(45deg, rgba(96, 189, 252, 1) 0%, rgba(99, 129, 229, 1) 100%);
+}
+.col-intro:hover p{
+    color:white;
+}
+/* journey rows */
+@media screen and (min-width: 992px) {
+    .img-journey {
+        position:absolute;
+    }
+}
+img.bg-img.w-100.h-100 {
+    transition: all .25s ease-in-out;
+}
+img.position-absolute.bg-img.w-100.h-100:hover {
+    transform: scale(1.1);
+}

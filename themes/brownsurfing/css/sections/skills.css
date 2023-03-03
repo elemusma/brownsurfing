@@ -1,0 +1,12 @@
+.col-skills .col-interior{
+    transition:all .5s ease-in-out;
+}
+.col-skills .col-interior:hover{
+    background:linear-gradient(45deg, rgba(96, 189, 252, 1) 0%, rgba(99, 129, 229, 1) 100%);
+}
+.col-skills .col-interior:hover *{
+    color:white;
+}
+.col-skills .col-interior:hover .text-gradient {
+    -webkit-text-fill-color: white!important;
+}

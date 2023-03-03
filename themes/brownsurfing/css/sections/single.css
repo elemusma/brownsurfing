@@ -1,0 +1,37 @@
+.single section.hero {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.primary-navbar {
+    padding-bottom: 0 !important;
+}
+.primary-navbar .bg-black.hero-clip-path {
+    background: #000000;
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    background: linear-gradient(to right, #434343, #000000);
+    opacity:1!important;
+    clip-path: none;
+}
+/* textarea {
+    width: 100%;
+    resize: none !important;
+    height: auto;
+    border: none;
+} */
+/* start of pagination */
+span.page-numbers.current {
+    background: white;
+    color: #6381e5;
+}
+.page-numbers {
+    background: #6381e5;
+    color: white;
+    padding: 10px 20px;
+    border: 3px solid #6381e5;
+    transition: all .25s ease-in-out;
+}
+.page-numbers:hover {
+    background: white;
+    color: #6381e5;
+}
+/* end of pagination */
