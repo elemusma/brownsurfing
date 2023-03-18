@@ -105,6 +105,7 @@ wp_reset_postdata(); ?>
 </div>
 </li> -->
 <li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/resources/" class="h5 text-white">Resources</a></li>
+<li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/contact/" class="h5 text-white">Contact</a></li>
 <!-- <li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/skills/" class="h5 text-white">Skills</a> -->
 <!-- <ul class="sub-menu">
     <li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/blog/skills/" class="h5 text-white">Skills</a></li>
