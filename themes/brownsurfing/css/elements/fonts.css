@@ -35,7 +35,9 @@ h4,
 h5,
 .h5,
 h6,
-.h6 {
+.h6,
+h1.h3 span,
+span#feature-text {
     font-family: 'Lato', sans-serif;
     font-weight: 800;
 }
