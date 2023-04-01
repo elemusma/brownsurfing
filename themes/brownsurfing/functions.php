@@ -37,13 +37,16 @@ wp_enqueue_style('style', get_stylesheet_uri() );
 
 wp_enqueue_style('bootstrap', get_theme_file_uri('/css/bootstrap.min.css'));
 wp_enqueue_style('body', get_theme_file_uri('/css/sections/body.css'));
-wp_enqueue_style('new-nav', get_theme_file_uri('/css/sections/new-nav.css'));
+// wp_enqueue_style('new-nav', get_theme_file_uri('/css/sections/new-nav.css'));
 wp_enqueue_style('nav', get_theme_file_uri('/css/sections/nav.css'));
 
+if(is_page_template('templates/portfolio.php')){
+	wp_enqueue_style('portfolio-css', get_theme_file_uri('/css/sections/portfolio.css'));
+}
 
 // if(is_single() || is_page_template('templates/blog.php')){
 	wp_enqueue_style('blog', get_theme_file_uri('/css/sections/blog.css'));
-	wp_enqueue_style('single', get_theme_file_uri('/css/sections/single.css'));
+	// wp_enqueue_style('single', get_theme_file_uri('/css/sections/single.css'));
 // }
 // if(is_page_template('templates/managed-seo.php') || is_page_template('templates/seo-individual.php')) {
 // 	wp_enqueue_style('seo', get_theme_file_uri('/css/sections/seo.css'));
@@ -77,16 +80,17 @@ function brown_surfing_stylesheets_footer() {
 	wp_enqueue_style('img', get_theme_file_uri('/css/elements/img.css'));
 
 
-	wp_enqueue_style('photo-gallery', get_theme_file_uri('/css/sections/photo-gallery.css'));
+	// wp_enqueue_style('photo-gallery', get_theme_file_uri('/css/sections/photo-gallery.css'));
 	wp_enqueue_style('popup', get_theme_file_uri('/css/sections/popup.css'));
 	
 
 	wp_enqueue_style('footer', get_theme_file_uri('/css/sections/footer.css'));
-	wp_enqueue_style('sidebar', get_theme_file_uri('/css/sections/sidebar.css'));
+	// wp_enqueue_style('sidebar', get_theme_file_uri('/css/sections/sidebar.css'));
 	wp_enqueue_style('btn', get_theme_file_uri('/css/elements/btn.css'));
-	if(is_single()){
-		wp_enqueue_style('single', get_theme_file_uri('/css/sections/single.css'));
-	}
+
+	// if(is_single()){
+	// 	wp_enqueue_style('single', get_theme_file_uri('/css/sections/single.css'));
+	// }
 
 
 	// wp_enqueue_style('style-footer', get_theme_file_uri('/css/style-footer.css'));

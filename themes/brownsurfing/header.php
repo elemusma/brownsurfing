@@ -63,59 +63,24 @@ echo get_template_part('partials/new-logo');
         </div>
     </a>
 <div class="nav-items" id="navItems">
-<ul id="main-menu" class="list-unstyled d-lg-flex flex-wrap align-items-center justify-content-end menu-custom mb-0">
-<!-- <li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/website-design/" class="h5 text-white">Website Design</a></li> -->
-<!-- <li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/seo/" class="h5 text-white">SEO</a></li> -->
-<!-- <li class="pl-2 pr-2 pt-4 pb-4 parent-item h5 text-white mb-0 position-relative" id="home"><a href="<?php echo home_url(); ?>" class="h5 text-white">Home</a>  -->
-<li class="pl-2 pr-2 pt-4 pb-4 parent-item h5 text-white mb-0 position-relative" id="portfolio"><a href="<?php echo home_url(); ?>/portfolio/" class="h5 text-white">Portfolio</a> 
-<!-- 	<span class="pl-2 pr-2 bold h4 text-white toggle-icon">+</span> -->
-	</li>
-<!-- <li class="sub-menu-mobile desktop-hidden overflow-h" style="height:0;">
-<div class="sub-menu-mobile-inner" style="">
-<div class="container">
-<div class="row">
-<div class="col-12">
-<span class="bold h5" style="color:black;"><?php the_field('navigation_portfolio_top_title','options'); ?></span>
-<div class="bg-white mt-3" style="width:200px;height:2.5px;"></div>
-<div class="row mt-3">
+
 <?php
-$portfolioPages = get_field('navigation_portfolio_pages','options');
-if( $portfolioPages ): ?>
-<?php foreach( $portfolioPages as $post ): 
-// Setup this post for WP functions (variable must be named $post).
-setup_postdata($post); ?>
-<a href="<?php the_permalink(); ?>" class="col-lg-3 col-md-6 col-12 text-center h2 text-white">
-<div class="pb-2 position-relative" style="padding-top:150px;">
-<?php the_post_thumbnail('medium',array('class'=>'position-absolute bg-img w-100 h-100')); ?>
-<div class="bg-black w-100 h-100 position-absolute" style="top:0;left:0;opacity:.45"></div>
-<div class="position-relative">
-<h3 class="bold"><?php the_title(); ?></h3>
-</div>
-</div>
-</a>
-<?php endforeach; ?>
-<?php 
-// Reset the global post object so that the rest of the page works correctly.
-wp_reset_postdata(); ?>
-<?php endif; ?>
-</div>
-</div>
-</div>
-</div>
-</div>
-</li> -->
+wp_nav_menu(array(
+'menu' => 'primary',
+'menu_class'=>'menu d-flex list-unstyled mb-0'
+)); 
+?>
+
+<!-- <ul id="main-menu" class="list-unstyled d-lg-flex flex-wrap align-items-center justify-content-end menu-custom mb-0">
+
+<li class="pl-2 pr-2 pt-4 pb-4 parent-item h5 text-white mb-0 position-relative" id="portfolio"><a href="<?php echo home_url(); ?>/portfolio/" class="h5 text-white">Portfolio</a> 
+
 <li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/resources/" class="h5 text-white">Resources</a></li>
+
 <li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/contact/" class="h5 text-white">Contact</a></li>
-<!-- <li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/skills/" class="h5 text-white">Skills</a> -->
-<!-- <ul class="sub-menu">
-    <li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/blog/skills/" class="h5 text-white">Skills</a></li>
-    <li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/contact/" class="h5 text-white">Contact</a></li>
-</ul> -->
-<!-- </li> -->
 
-<!-- <li class="pl-2 pr-2 pt-3 pb-3 position-relative"><a href="<?php echo home_url(); ?>/contact/#hire-me" class="btn bg-accent-gradient text-white h5">Hire Me</a></li> -->
 
-	</ul>
+	</ul> -->
 </div>
 	
 	<?php
