@@ -170,7 +170,9 @@ wp_reset_postdata(); ?>
 </div>
 <!-- end of nav -->
 </header>
-<?php if(!is_product() && !is_front_page() && !is_search()){ ?>
+<?php if( !is_product() && !is_front_page() && !is_search() && !is_home() ) { 
+
+	?>
 <section class="hero position-relative pt-5 pb-5" style="background: #ADA996;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

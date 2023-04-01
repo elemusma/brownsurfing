@@ -1,15 +1,23 @@
 /* 
 
 Theme Name: Brown Surfing
-Theme Author: Tadeo Lemus
-Theme Author URI: https://brownsurfing.com/
+Author: Tadeo Lemus
+Author URI: https://brownsurfing.com/
+Description: Responsive and user-friendly WordPress theme is designed to provide your website visitors with the best possible user experience, no matter what device they are using. With a modern and clean design, intuitive navigation, and easy-to-use features, this theme is perfect for anyone looking to create a website that is both functional and visually appealing.
+Version: 1.0
 
 */
 
-html, body {
+/* html, body {
     overflow-wrap: anywhere;
+} */
+
+.logged-in .nav.position-fixed {
+    margin-top: 32px;
 }
 
-.logged-in .nav.position-fixed{
-	margin-top:32px;
+@media only screen and (max-width:767px) {
+    .logged-in header.position-fixed {
+        margin-top: 45px;
+    }
 }
