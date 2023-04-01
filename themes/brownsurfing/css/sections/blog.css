@@ -98,7 +98,7 @@ input#submit,input#searchsubmit {
 /* pagination */
 span.page-numbers.current {
     background: white;
-    border: 0px solid #6381e5;
+    border: 2px solid #6381e5;
     padding: 10px 20px;
     color:#6381e5;
 	display: inline-block;
@@ -109,4 +109,6 @@ a.page-numbers {
     padding: 10px 20px;
     color: white;
 	margin-bottom: 5px;
+	display: inline-block;
 }
+    padding: 10px 20px;
