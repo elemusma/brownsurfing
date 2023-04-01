@@ -6,6 +6,33 @@
     font-weight: 300;
     line-height:1.8;
 } */
+body,
+html,
+p,
+strong,
+b,
+em,
+a,
+ul,
+li,
+span,
+div {
+    font-family: 'proxima_novaregular';
+}
+
+.bold {
+    font-family: 'proxima_novabold';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lato', sans-serif;
+}
+
 a {
     color: #6381e5;
 }
