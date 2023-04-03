@@ -65,7 +65,8 @@ $recentBlog = new WP_Query(array(
 <ul class="list-unstyled">
 <?php while($recentBlog->have_posts()){
 $recentBlog->the_post(); ?>
-<li class="mb-2"><a href="<?php the_permalink(); ?>"><small><?php the_title(); ?></small></a></li>
+<li class="mb-2" style="line-height:1;">
+    <a href="<?php the_permalink(); ?>"><small><?php the_title(); ?></small></a></li>
 <?php } wp_reset_postdata(); ?>
 </ul>
 </div>
