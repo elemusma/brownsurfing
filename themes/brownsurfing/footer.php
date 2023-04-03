@@ -56,7 +56,7 @@ echo wp_get_attachment_image($siImg['id'],'full','',['class'=>'mr-3 position-rel
 <!-- end of col -->
 <!-- start of col -->
 <div class="col-lg-3 col-md-6 pt-lg-0 pt-5">
-<h5>BLOG</h5>
+<h5>Recent Posts</h5>
 <?php
 $recentBlog = new WP_Query(array(
 'posts_per_page' => 5,
@@ -70,6 +70,23 @@ $recentBlog->the_post(); ?>
 </ul>
 </div>
 <!-- end of col -->
+<?php
+// start of col
+echo '<div class="col-lg-3 col-md-6 pt-lg-0 pt-5">';
+echo '<h5>Tools</h5>';
+
+wp_nav_menu(array(
+    'menu' => 'Tools',
+    'menu_class'=>'menu list-unstyled mb-0'
+    )); 
+
+// echo '<ul class="list-unstyled">';
+//     echo '<li><a href="' . home_url() . '/random-password-generator-with-javascript/"><small></small>Random Password Generator with JavaScript</a></li>';
+// echo '</ul>';
+
+echo '</div>';
+// end of col
+?>
 <!-- start of col -->
 <!-- <div class="col-lg-3 col-md-6 pt-lg-0 pt-5">
 <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="efrain-tadeo-lemus-martinez" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/efrain-tadeo-lemus-martinez?trk=profile-badge">Efrain Tadeo Lemus Martinez</a></div>
