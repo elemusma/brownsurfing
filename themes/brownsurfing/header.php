@@ -13,9 +13,8 @@
 	wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php if(get_field('body','options')) { the_field('body','options'); } ?>
-
 <?php 
+if(get_field('body','options')) { the_field('body','options'); }
 
 	if(have_rows('hreflang_tags')): while(have_rows('hreflang_tags')): the_row();
 	
@@ -41,49 +40,45 @@ echo '<link rel="' . get_sub_field('rel') . '" href="' . get_sub_field('href') .
 <div class="container">
 <div class="row align-items-center">
 <div class="col-md-1 col-2">
-<a href="<?php echo home_url(); ?>">
-<?php $logo = get_field('logo','options');
+	
+<?php
+echo '<a href="' . home_url() . '">';
+$logo = get_field('logo','options');
+
 // echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100','style'=>'height:auto;']); 
+
 echo get_template_part('partials/new-logo');
+
 // echo '<p>hello</p>';
+echo '</a>';
 ?>
-</a>
 </div>
-	<div class="col-lg-4 col-7">
-		<p class="mb-0 text-white small pr-md-0 pr-5">
-			<em>Pixel perfect and responsive websites</em>
-		</p>
-	</div>
+<div class="col-lg-4 col-7">
+<p class="mb-0 text-white small pr-md-0 pr-5">
+<em>Pixel perfect and responsive websites</em>
+</p>
+</div>
 <div class="col-lg-7 col-3 d-flex justify-content-end align-items-center">
 <a id="navToggle" class="nav-toggle">
-        <div>
-            <div class="line-1"></div>
-            <div class="line-2"></div>
-            <div class="line-3"></div>
-        </div>
-    </a>
-<div class="nav-items" id="navItems">
+<div>
+<div class="line-1 bg-accent"></div>
+<div class="line-2 bg-accent"></div>
+<div class="line-3 bg-accent"></div>
+</div>
+</a>
+<div class="nav-items mobile-hidden" id="">
 
 <?php
 wp_nav_menu(array(
 'menu' => 'primary',
 'menu_class'=>'menu d-flex list-unstyled mb-0'
 )); 
-?>
-
-<!-- <ul id="main-menu" class="list-unstyled d-lg-flex flex-wrap align-items-center justify-content-end menu-custom mb-0">
-
-<li class="pl-2 pr-2 pt-4 pb-4 parent-item h5 text-white mb-0 position-relative" id="portfolio"><a href="<?php echo home_url(); ?>/portfolio/" class="h5 text-white">Portfolio</a> 
-
-<li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/resources/" class="h5 text-white">Resources</a></li>
-
-<li class="pl-2 pr-2 pt-4 pb-4 position-relative"><a href="<?php echo home_url(); ?>/contact/" class="h5 text-white">Contact</a></li>
 
 
-	</ul> -->
-</div>
+
+echo '</div>';
 	
-	<?php
+
 // 	start of search icon
 
 echo '<div class="position-relative search-icon open-modal ml-4" style="" id="search-icon">';
@@ -91,6 +86,36 @@ echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117.11 117.1" class="
 echo '</div>';
 
 // 	end of search icon
+
+
+echo '<div id="navMenuOverlay" class="position-fixed z-2"></div>';
+echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-white desktop-hidden" id="navItems">';
+
+echo '<div class="pt-5">';
+echo '<div class="close-menu">';
+echo '<div>';
+echo '<span id="navMenuClose" class="close h1">X</span>';
+echo '</div>';
+echo '</div>';
+echo '<a href="' . home_url() . '">';
+
+$logo = get_field('logo','options'); 
+// if($logo){
+// echo wp_get_attachment_image($logo['id'],'full',"",['class'=>'w-100 h-auto','style'=>'max-width:250px;']);
+// }
+
+echo '<div style="width:100px;">';
+echo get_template_part('partials/new-logo');
+echo '</div>';
+
+echo '</a>';
+echo '</div>';
+wp_nav_menu(array(
+'menu' => 'primary',
+'menu_class'=>'menu list-unstyled mb-0'
+)); 
+echo '</div>'; // end of col for navigation
+
 	?>
 	
 </div>
@@ -98,40 +123,7 @@ echo '</div>';
 
 </div>
 </div>
-<!-- <div class="position-relative w-100">
-<div class="sub-menu portfolio position-absolute w-100 pt-5 pb-5 bg-accent-gradient box-shadow z-2 mobile-hidden" style="top:0;left:0;opacity:0;pointer-events:none;">
-<div class="container">
-<div class="row">
-<div class="col-12">
-<span class="bold h5" style="color:black;"><?php the_field('navigation_portfolio_top_title','options'); ?></span>
-<div class="bg-white mt-3" style="width:200px;height:2.5px;"></div>
-<div class="row mt-3">
-<?php
-$portfolioPages = get_field('navigation_portfolio_pages','options');
-if( $portfolioPages ): ?>
-<?php foreach( $portfolioPages as $post ): 
-// Setup this post for WP functions (variable must be named $post).
-setup_postdata($post); ?>
-<a href="<?php the_permalink(); ?>" class="col-md-3 text-center h2 text-white">
-<div class="pb-2 position-relative" style="padding-top:150px;">
-<?php the_post_thumbnail('medium',array('class'=>'position-absolute bg-img w-100 h-100')); ?>
-<div class="bg-black w-100 h-100 position-absolute" style="top:0;left:0;opacity:.45"></div>
-<div class="position-relative">
-<h3 class="bold"><?php the_title(); ?></h3>
-</div>
-</div>
-</a>
-<?php endforeach; ?>
-<?php 
-// Reset the global post object so that the rest of the page works correctly.
-wp_reset_postdata(); ?>
-<?php endif; ?>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div> -->
+
 </div>
 <!-- end of nav -->
 </header>
