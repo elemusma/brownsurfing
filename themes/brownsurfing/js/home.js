@@ -1,3 +1,20 @@
+// let prevScrollPos = window.pageYOffset;
+// let scrollDirection = 0;
+
+// window.onscroll = function () {
+//   let currentScrollPos = window.pageYOffset;
+//   if (prevScrollPos > currentScrollPos) {
+//     console.log(`Scrolling Upwards ${scrollDirection}`);
+//     scrollDirection--;
+//     console.log(scrollY);
+//   } else {
+//     scrollDirection++;
+//     console.log(scrollY);
+//     console.log(`Scrolling Downwards ${scrollDirection}`);
+//   }
+//   prevScrollPos = currentScrollPos;
+// }
+
 const carouselText = [
   { text: "WordPress", color: "#007BFF" },
   { text: "PHP", color: "#CF995F" },
@@ -54,6 +71,7 @@ function updateFontColor(eleRef, color) {
 function waitForMs(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
+
 
 
 
