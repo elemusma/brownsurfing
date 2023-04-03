@@ -77,7 +77,7 @@ echo '<h5>Tools</h5>';
 
 wp_nav_menu(array(
     'menu' => 'Tools',
-    'menu_class'=>'menu list-unstyled mb-0'
+    'menu_class'=>'menu list-unstyled mb-0 small'
     )); 
 
 // echo '<ul class="list-unstyled">';
