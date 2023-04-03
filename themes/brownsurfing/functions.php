@@ -44,6 +44,12 @@ if(is_page_template('templates/portfolio.php')){
 	wp_enqueue_style('portfolio-css', get_theme_file_uri('/css/sections/portfolio.css'));
 }
 
+if(is_page_template('templates/password-generator.php')){
+	wp_enqueue_style('password-generator-css', get_theme_file_uri('/css/sections/password-generator.css'));
+
+	wp_enqueue_script('password-generator-js', get_theme_file_uri('/js/password-generator.js'));
+}
+
 // if(is_single() || is_page_template('templates/blog.php')){
 	wp_enqueue_style('blog', get_theme_file_uri('/css/sections/blog.css'));
 	// wp_enqueue_style('single', get_theme_file_uri('/css/sections/single.css'));
