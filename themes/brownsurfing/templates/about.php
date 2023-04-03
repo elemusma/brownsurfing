@@ -3,16 +3,18 @@
  * Template Name: About
  */
 get_header(); ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/sections/about.css">
 <!-- start of intro -->
 <section class="pt-5 pb-5">
 <div class="container">
 <div class="row">
 <?php if(have_rows('intro_columns')): while(have_rows('intro_columns')): the_row(); ?>
-<div class="col-md-4 text-center col-intro pt-4 pb-4">
+<div class="col-md-4 text-center col-intro col-skills pt-4 pb-4">
+<div class="position-relative col-interior bg-white pt-4 pb-4 pl-3 pr-3 h-100" style="box-shadow:0 20px 30px rgba(0,0,0,.1)">
 <h3><?php the_sub_field('title'); ?></h3>
 <h6 class="pt-3 pb-3"><small><?php the_sub_field('date'); ?></small></h6>
 <?php the_sub_field('content'); ?>
+
+</div>
 </div>
 <?php endwhile; else : endif; ?>
 </div>

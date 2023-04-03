@@ -1,24 +1,45 @@
-.col-intro{
-    transition:all .25s ease-in-out;
+.col-skills .col-interior,
+.col-skills .col-interior * {
+    transition: all .5s ease-in-out;
+    position: relative;
 }
-.col-intro p{
-    transition:all .15s ease-in-out;
+
+.col-skills .col-interior:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, rgba(96, 189, 252, 1) 0%, rgba(99, 129, 229, 1) 100%);
+    opacity: 0;
+    transition: all .5s ease-in-out;
 }
-.col-intro:hover{
-    background:linear-gradient(45deg, rgba(96, 189, 252, 1) 0%, rgba(99, 129, 229, 1) 100%);
+
+.col-skills .col-interior:hover:before {
+    opacity: 1;
 }
-.col-intro:hover p{
-    color:white;
+
+.col-skills .col-interior:hover * {
+    color: white;
+    position: relative;
 }
+
+.col-skills .col-interior:hover .text-gradient {
+    -webkit-text-fill-color: white !important;
+}
+
 /* journey rows */
 @media screen and (min-width: 992px) {
     .img-journey {
-        position:absolute;
+        position: absolute;
     }
 }
+
 img.bg-img.w-100.h-100 {
     transition: all .25s ease-in-out;
 }
+
 img.position-absolute.bg-img.w-100.h-100:hover {
     transform: scale(1.1);
 }

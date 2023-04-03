@@ -22,7 +22,7 @@ get_header(); ?>
         </div>
         <?php if(have_rows('individual_skills')): while(have_rows('individual_skills')): the_row(); ?>
         <div class="col-md-3 col-md-6 col-skills mb-5">
-        <div class="position-relative col-interior bg-white pt-4 pb-4 pl-3 pr-3" style="box-shadow:0 20px 30px rgba(0,0,0,.1)">
+        <div class="position-relative col-interior bg-white pt-4 pb-4 pl-3 pr-3 h-100" style="box-shadow:0 20px 30px rgba(0,0,0,.1)">
         <h4><?php the_sub_field('title'); ?></h4>
         <h5 class="text-gradient h3"><?php the_sub_field('highlight'); ?></h5>
         <hr>
