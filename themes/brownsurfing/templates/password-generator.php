@@ -6,7 +6,7 @@
 
  get_header();
 
- echo '<section class="password-generator bg-accent-gradient" style="padding:100px 0;">';
+ echo '<section class="password-generator bg-accent-gradient" style="padding:50px 0;">';
  echo '<div class="container">';
  echo '<div class="row">';
  echo '<div class="col-lg-6 col-md-9">';

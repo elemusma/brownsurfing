@@ -17,4 +17,9 @@
 
 footer ul.menu li {
     padding-top: 0;
+    line-height: 1.2;
+}
+
+footer ul.menu li a {
+    padding-left: 0px;
 }

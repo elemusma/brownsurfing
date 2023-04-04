@@ -54,6 +54,8 @@ if(is_page_template('templates/password-generator.php')){
 	wp_enqueue_script('password-generator-js', get_theme_file_uri('/js/password-generator.js'));
 }
 
+
+
 // if(is_single() || is_page_template('templates/blog.php')){
 	wp_enqueue_style('blog', get_theme_file_uri('/css/sections/blog.css'));
 	// wp_enqueue_style('single', get_theme_file_uri('/css/sections/single.css'));
@@ -130,6 +132,11 @@ function brown_surfing_stylesheets_footer() {
     // general
 	wp_enqueue_script('nav-js', get_theme_file_uri('/js/nav.js'));
     wp_enqueue_script('popup-js', get_theme_file_uri('/js/popup.js'));
+
+	if(is_page_template('templates/tools-dividend-yield-calculator.php')){
+		// wp_enqueue_style('password-generator-css', get_theme_file_uri('/css/sections/password-generator.css'));
+		wp_enqueue_script('tools-dividend-yield-calculator-js', get_theme_file_uri('/js/tools-dividend-yield-calculator.js'));
+	}
 
 	if(is_front_page()){
 		wp_enqueue_script('home-jquery-js', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js');
