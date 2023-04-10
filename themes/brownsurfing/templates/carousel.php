@@ -9,58 +9,45 @@
  ?>
  <style>
 
-.custom-carousel {
-  position: relative;
-  width: 100%;
+.custom-carousel-container {
+  width: 300px;
   overflow: hidden;
 }
 
-.custom-carousel-container {
+.custom-carousel-track {
   display: flex;
-  flex-wrap: nowrap;
-  animation: scroll 10s infinite linear;
-  animation-play-state: paused;
+  width: max-content;
+  animation: custom-scroll 10s linear infinite;
 }
 
 .custom-carousel-item {
-  flex: 0 0 100%;
+  flex: 0 0 300px;
+  margin: 10px;
+  background-color: #eee;
+  text-align: center;
 }
 
-.custom-carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
-  font-size: 20px;
-  border: none;
-  background: transparent;
-  color: white;
-  cursor: pointer;
+@keyframes custom-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
-
-.custom-carousel-button-left {
-  left: 10px;
-}
-
-.custom-carousel-button-right {
-  right: 10px;
-}
-
 
  </style>
 
  <?php
 
 //  echo '<div class="container">';
- echo '<div class="custom-carousel">';
  echo '<div class="custom-carousel-container">';
+ echo '<div class="custom-carousel-track">';
 
 echo '<div class="custom-carousel-item">';
 echo wp_get_attachment_image(1847,'full','',[
   'class'=>'',
-  'style'=>'height:400px;object-fit:cover;object-position:top;',
-  'onerror'=>'console.error("Error loading image")'
+  'style'=>'height:400px;object-fit:cover;object-position:top;'
 ]);
 echo '</div>';
 
@@ -81,73 +68,66 @@ echo '</div>';
 
 echo '</div>';
 
-// Add more items as needed
-
-  echo '<button class="custom-carousel-button custom-carousel-button-left">&lt;</button>';
-  echo '<button class="custom-carousel-button custom-carousel-button-right">&gt;</button>';
-
+echo '<button class="custom-carousel-prev">Prev</button>';
+echo '<button class="custom-carousel-next">Next</button>';
 
 echo '</div>';
+
 ?>
 
 <script>
+const customCarouselTrack = document.querySelector('.custom-carousel-track');
+const customCarouselItems = document.querySelectorAll('.custom-carousel-item');
+const customTrackWidth = customCarouselTrack.offsetWidth;
+const customItemWidth = customCarouselItems[0].offsetWidth;
+const customItemsPerSlide = Math.floor(customTrackWidth / customItemWidth);
+let customCurrentPosition = 0;
+const customPrevButton = document.querySelector('.custom-carousel-prev');
+const customNextButton = document.querySelector('.custom-carousel-next');
+let customIsAutoplayEnabled = false;
+let customAutoplayInterval = null;
 
-window.addEventListener('load', function() {
-  var container = document.querySelector('.carousel-container');
-  var firstItem = container.querySelector('.custom-carousel-item');
-  var clonedItem = firstItem.cloneNode(true);
-  var containerWidth = container.offsetWidth * 2;
+function customSlide(direction) {
+  customCurrentPosition += direction * customItemsPerSlide;
+  if (customCurrentPosition < 0) {
+    customCurrentPosition = customCarouselItems.length - customItemsPerSlide;
+  } else if (customCurrentPosition > customCarouselItems.length - customItemsPerSlide) {
+    customCurrentPosition = 0;
+  }
+  customCarouselTrack.style.transform = `translateX(-${customCurrentPosition * customItemWidth}px)`;
+}
 
-  container.appendChild(clonedItem);
-  container.style.width = containerWidth + 'px';
-  container.style.animation = 'scroll 10s infinite linear';
-  container.style.animationPlayState = 'paused';
+customPrevButton.addEventListener('click', () => {
+  customSlide(-1);
+});
 
-  // Add left and right buttons
-  var leftButton = document.createElement('button');
-  leftButton.textContent = '<';
-  leftButton.classList.add('custom-carousel-button', 'custom-carousel-button-left');
-  container.parentElement.appendChild(leftButton);
+customNextButton.addEventListener('click', () => {
+  customSlide(1);
+});
 
-  var rightButton = document.createElement('button');
-  rightButton.textContent = '>';
-  rightButton.classList.add('custom-carousel-button', 'custom-carousel-button-right');
-  container.parentElement.appendChild(rightButton);
+function customEnableAutoplay() {
+  customIsAutoplayEnabled = true;
+  customAutoplayInterval = setInterval(() => {
+    customSlide(1);
+  }, 5000);
+}
 
-  // Start the animation when page is fully loaded
-  window.addEventListener('load', function() {
-    container.style.animationPlayState = 'running';
-  });
+function customDisableAutoplay() {
+  customIsAutoplayEnabled = false;
+  clearInterval(customAutoplayInterval);
+}
 
-  // Pause the animation on mouseover
-  container.addEventListener('mouseover', function() {
-    container.style.animationPlayState = 'paused';
-  });
+if (customIsAutoplayEnabled) {
+  customEnableAutoplay();
+}
 
-  // Resume the animation on mouseout
-  container.addEventListener('mouseout', function() {
-    container.style.animationPlayState = 'running';
-  });
-
-  // Scroll left on left button click
-  leftButton.addEventListener('click', function() {
-    var currentPosition = parseInt(container.style.transform.split('(')[1]);
-    if (currentPosition === 0) {
-      container.style.transform = 'translateX(-' + (containerWidth - container.offsetWidth) + 'px)';
-    } else {
-      container.style.transform = 'translateX(' + currentPosition + 'px)';
-    }
-  });
-
-  // Scroll right on right button click
-  rightButton.addEventListener('click', function() {
-    var currentPosition = parseInt(container.style.transform.split('(')[1]);
-    if (currentPosition === -(containerWidth - container.offsetWidth)) {
-      container.style.transform = 'translateX(0px)';
-    } else {
-      container.style.transform = 'translateX(' + (currentPosition - container.offsetWidth) + 'px)';
-    }
-  });
+const customAutoplayCheckbox = document.querySelector('#custom-autoplay-checkbox');
+customAutoplayCheckbox.addEventListener('change', () => {
+  if (customAutoplayCheckbox.checked) {
+    customEnableAutoplay();
+  } else {
+    customDisableAutoplay();
+  }
 });
 
 

@@ -1,0 +1,7 @@
+.inactive {
+    opacity: 0;
+}
+
+.active {
+    transition: all .25s ease-in-out;
+}

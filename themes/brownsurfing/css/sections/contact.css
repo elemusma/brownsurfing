@@ -1,39 +1,54 @@
 input.button {
-    background:#6381e5;
+    background: #6381e5;
     color: white;
     border: none;
     padding: 10px;
     max-width: 200px;
     border-radius: 25px;
-    cursor:pointer;
-    transition:all .25s ease-in-out;
-    box-shadow:none;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+    box-shadow: none;
 }
+
 input.button:hover {
-    background:#5374e0;
+    background: #5374e0;
 }
-input, textarea, label, select {
+
+input,
+textarea,
+label,
+select {
     width: 100%;
     margin: 10px 0;
 }
-input, textarea,select {
+
+label {
+    margin-bottom: 0px;
+}
+
+input,
+textarea,
+select {
     background: #dde4e9;
     border: 0;
     padding: 10px 25px !important;
     border-radius: 25px;
-    box-shadow: 1px 1px 3px inset rgba(0,0,0,.5);
+    box-shadow: 1px 1px 3px inset rgba(0, 0, 0, .5);
     outline-color: var(--accent-primary);
 }
-#skillsDropdown{
-    transition:all 1s ease-in-out;
+
+#skillsDropdown {
+    transition: all 1s ease-in-out;
     /* height:0px; */
 }
+
 span.ajax-loader {
     display: none !important;
 }
 
 
-input[type=checkbox], input[type=radio] {
+input[type=checkbox],
+input[type=radio] {
     box-shadow: none;
     width: auto;
 }

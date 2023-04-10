@@ -134,7 +134,7 @@ function brown_surfing_stylesheets_footer() {
     wp_enqueue_script('popup-js', get_theme_file_uri('/js/popup.js'));
 
 	if(is_page_template('templates/tools-dividend-yield-calculator.php')){
-		// wp_enqueue_style('password-generator-css', get_theme_file_uri('/css/sections/password-generator.css'));
+		wp_enqueue_style('tools-dividend-yield-calculator-css', get_theme_file_uri('/css/sections/tools-dividend-yield-calculator.css'));
 		wp_enqueue_script('tools-dividend-yield-calculator-js', get_theme_file_uri('/js/tools-dividend-yield-calculator.js'));
 	}
 
