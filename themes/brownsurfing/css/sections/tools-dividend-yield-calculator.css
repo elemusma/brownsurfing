@@ -1,3 +1,14 @@
+/* input[type="text"] {
+    padding-left: 40px;
+    background-image: url('path/to/placeholder-icon.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+input[type="text"]:focus {
+    background-position: left -20px;
+} */
+
 .inactive {
     opacity: 0;
 }

@@ -18,7 +18,7 @@
 
  echo '<div class="initial-amount">';
  echo '<label for="initial-amount" class="bold">What\'s your initial amount?</label>';
- echo '<input type="text" name="initial-amount" id="initialAmount" class="number-input">';
+ echo '<input type="text" name="initial-amount" id="initialAmount" class="number-input" placeholder="$">';
  echo '</div>';
 
  echo '</div>';
