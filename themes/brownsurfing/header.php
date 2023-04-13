@@ -127,7 +127,7 @@ echo '</div>'; // end of col for navigation
 </div>
 <!-- end of nav -->
 </header>
-<?php if( !is_product() && !is_front_page() && !is_search() && !is_home() ) { 
+<?php if( !is_product() && !is_front_page() && !is_search() && !is_home() && !is_single() ) { 
 
 	?>
 <section class="hero position-relative pt-5 pb-5" style="background: #ADA996;  /* fallback for old browsers */
